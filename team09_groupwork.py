@@ -44,6 +44,10 @@ for i in range(len(f(b))):
     if s[0]==g(i):           #비용의 최솟값이 나오는 순열의 순서
         sol+=f(b)[i]           #위에서 찾은 순서의 순열 = sol
 
+machine=['m_'+str(i) for i in range(a)]
+work=['w_'+str(i) for i in range(a)]
+c=[machine[i]+' : '+work[sol[i]] for i in range(a)]
+
 
 
 
