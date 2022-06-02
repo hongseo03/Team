@@ -72,4 +72,16 @@ else:
     c=[machine[i]+' : '+work[sol[i]] for i in range(a)]   
     logger.debug("최적화되 기계와 작업의 매핑")
     logger.debug(c)
-      
+    
+    key=['기계','작업']
+    mac=[machine[i] for i in range(a)]
+    val=[work[sol[i]]for i in range(a)]
+    di={'기계':mac, '작업':val}
+    #di=dict(zip(key,value))
+    #print(di)
+    #print(c)
+    df=pd.DataFrame(di)
+    df=df.set_index('기계')
+    df.to_csv("./result.csv")
+    result2=pd.read_csv('./result.csv')
+    #print(result2)
